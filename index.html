@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Compound Interest Calculator | Calculate Investment Growth</title>
+  <meta name="description" content="Free compound interest calculator. Estimate your future balance, total contributions, and interest earned using a starting amount, monthly deposits, rate, and time.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#7a4ce0">
+  <meta name="author" content="Compound Interest Calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Compound Interest Calculator">
+  <meta property="og:description" content="Calculate future investment growth, total contributions, and compound interest in seconds.">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Compound Interest Calculator">
+  <meta name="twitter:description" content="Estimate future balance, contributions, and compound interest in seconds.">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--
+    ADSENSE SETUP
+    1. Replace ca-pub-XXXXXXXXXXXXXXXX with your real AdSense publisher ID.
+    2. Replace data-ad-slot="XXXXXXXXXX" with your real responsive ad unit slot.
+    3. Uncomment the AdSense script below only after you have real values.
+
+    <script async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+      crossorigin="anonymous"></script>
+  -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Compound Interest Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "description": "A free compound interest calculator for estimating future balance, total contributions, and interest earned.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body id="page-body">
+  <div id="background-orb-one" aria-hidden="true"></div>
+  <div id="background-orb-two" aria-hidden="true"></div>
+
+  <header id="site-header">
+    <div id="header-inner">
+      <a id="brand-link" href="#top" aria-label="Compound Interest Calculator home">
+        <span id="brand-icon" aria-hidden="true">📈</span>
+        <span id="brand-text">Compound Interest Calculator</span>
+      </a>
+      <a id="header-calculate-link" href="#calculator-section">Calculate</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="hero-section" aria-labelledby="hero-title">
+      <div id="hero-badge">Free Investment Growth Tool</div>
+      <h1 id="hero-title">Compound Interest Calculator</h1>
+      <p id="hero-subtitle">See how your money can grow over time with regular monthly contributions.</p>
+    </section>
+
+    <section id="calculator-section" aria-labelledby="calculator-title">
+      <div id="calculator-card">
+        <div id="calculator-heading-row">
+          <div id="calculator-heading-copy">
+            <p id="calculator-eyebrow">Investment inputs</p>
+            <h2 id="calculator-title">Calculate your growth</h2>
+          </div>
+          <span id="calculator-icon" aria-hidden="true">💰</span>
+        </div>
+
+        <form id="calculator-form" novalidate>
+          <div id="form-grid">
+            <div id="starting-amount-field">
+              <label id="starting-amount-label" for="starting-amount">Starting amount</label>
+              <div id="starting-amount-control">
+                <span id="starting-amount-prefix" aria-hidden="true">$</span>
+                <input id="starting-amount" name="startingAmount" type="number" inputmode="decimal" min="0" step="100" value="10000" required aria-describedby="starting-amount-error">
+              </div>
+              <p id="starting-amount-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div id="monthly-contribution-field">
+              <label id="monthly-contribution-label" for="monthly-contribution">Monthly contribution</label>
+              <div id="monthly-contribution-control">
+                <span id="monthly-contribution-prefix" aria-hidden="true">$</span>
+                <input id="monthly-contribution" name="monthlyContribution" type="number" inputmode="decimal" min="0" step="10" value="500" required aria-describedby="monthly-contribution-error">
+              </div>
+              <p id="monthly-contribution-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div id="interest-rate-field">
+              <label id="interest-rate-label" for="interest-rate">Annual interest rate</label>
+              <div id="interest-rate-control">
+                <input id="interest-rate" name="interestRate" type="number" inputmode="decimal" min="0" max="100" step="0.1" value="7" required aria-describedby="interest-rate-error">
+                <span id="interest-rate-suffix" aria-hidden="true">%</span>
+              </div>
+              <p id="interest-rate-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div id="years-field">
+              <label id="years-label" for="years">Years</label>
+              <div id="years-control">
+                <input id="years" name="years" type="number" inputmode="numeric" min="1" max="100" step="1" value="10" required aria-describedby="years-error">
+                <span id="years-suffix" aria-hidden="true">years</span>
+              </div>
+              <p id="years-error" class="field-error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div id="currency-field">
+            <label id="currency-label" for="currency">Currency</label>
+            <select id="currency" name="currency">
+              <option value="USD" selected>USD — $</option>
+              <option value="EUR">EUR — €</option>
+              <option value="GBP">GBP — £</option>
+              <option value="ILS">ILS — ₪</option>
+            </select>
+          </div>
+
+          <button id="calculate-button" class="btn-primary" type="submit">Calculate Growth</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="result-section" aria-labelledby="result-heading" aria-live="polite">
+      <div id="result-card">
+        <p id="result-eyebrow">Estimated future balance</p>
+        <h2 id="result-heading">Your result</h2>
+        <div id="result-value">$106,639</div>
+        <p id="result-summary">After 10 years at 7% annual interest.</p>
+
+        <div id="result-stats-grid">
+          <article id="contributions-card">
+            <span id="contributions-icon" aria-hidden="true">💵</span>
+            <p id="contributions-label">Total contributed</p>
+            <strong id="contributions-value">$70,000</strong>
+          </article>
+          <article id="interest-card">
+            <span id="interest-icon" aria-hidden="true">✨</span>
+            <p id="interest-label">Interest earned</p>
+            <strong id="interest-value">$36,639</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <aside id="main-ad-slot" aria-label="Advertisement">
+      <span id="ad-label">Advertisement</span>
+      <!-- READY FOR GOOGLE ADSENSE: replace placeholder publisher ID and slot with real values. -->
+      <div id="ad-placeholder">Responsive Ad Space</div>
+    </aside>
+
+    <section id="how-it-works-section" aria-labelledby="how-it-works-title">
+      <p id="how-it-works-eyebrow">Quick guide</p>
+      <h2 id="how-it-works-title">How compound interest works</h2>
+      <p id="how-it-works-text">Compound interest means you earn interest on your original money and on interest already earned. This calculator uses monthly compounding and assumes monthly contributions are added at the end of each month.</p>
+      <div id="how-it-works-grid">
+        <article id="step-one-card"><span id="step-one-number">1</span><h3 id="step-one-title">Enter your money</h3><p id="step-one-text">Add your starting amount and monthly contribution.</p></article>
+        <article id="step-two-card"><span id="step-two-number">2</span><h3 id="step-two-title">Set rate and time</h3><p id="step-two-text">Enter the annual rate and how many years you plan to invest.</p></article>
+        <article id="step-three-card"><span id="step-three-number">3</span><h3 id="step-three-title">See your result</h3><p id="step-three-text">Get your estimated balance, contributions, and interest earned.</p></article>
+      </div>
+    </section>
+
+    <section id="faq-section" aria-labelledby="faq-title">
+      <p id="faq-eyebrow">Common questions</p>
+      <h2 id="faq-title">Compound interest FAQ</h2>
+      <details id="faq-item-one"><summary id="faq-question-one">What is compound interest?</summary><p id="faq-answer-one">It is interest earned on both your original balance and previously earned interest.</p></details>
+      <details id="faq-item-two"><summary id="faq-question-two">How often does this calculator compound interest?</summary><p id="faq-answer-two">The calculation compounds interest monthly and adds monthly contributions at the end of each month.</p></details>
+      <details id="faq-item-three"><summary id="faq-question-three">Is this result guaranteed?</summary><p id="faq-answer-three">No. It is an estimate for planning and does not include taxes, fees, or changing investment returns.</p></details>
+    </section>
+  </main>
+
+  <footer id="site-footer"><p id="footer-text">Free compound interest calculator for planning and educational use.</p></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
